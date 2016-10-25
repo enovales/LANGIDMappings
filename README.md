@@ -3,7 +3,9 @@
 
 # LANGIDMappings
 
-This project contains utilities for mapping Windows LANGID values to other formats.
+This project contains utilities for mapping Windows LANGID values to other formats. You can either
+include this library via Nuget, or simply include the LangIDMappings.fs file in your project (via
+paket or otherwise).
 
 Documentation: http://enovales.github.io/LANGIDMappings
 
