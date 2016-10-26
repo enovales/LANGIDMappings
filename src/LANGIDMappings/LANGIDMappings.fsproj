@@ -64,6 +64,7 @@
     <None Include="paket.template" />
     <Content Include="App.config" />
     <Compile Include="AssemblyInfoStatic.fs" />
+    <Compile Include="LangIDMappings.fsi" />
     <Compile Include="LangIDMappings.fs" />
   </ItemGroup>
   <ItemGroup>
