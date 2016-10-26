@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/vydsbke0rry40wx4?svg=true)](https://ci.appveyor.com/project/ErikNovales/langidmappings)
+
 [![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/issue)](http://issuestats.com/github/fsprojects/ProjectScaffold)
 [![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/pr)](http://issuestats.com/github/fsprojects/ProjectScaffold)
 
