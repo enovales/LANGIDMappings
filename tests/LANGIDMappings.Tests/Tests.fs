@@ -1,51 +1,51 @@
 module LANGIDMappings.Tests
 
 open LANGIDMappings
-open NUnit.Framework
+open Xunit
 
 let private langidEnglishUs = 0x0409us
 
-[<Test>]
+[<Fact>]
 let ``makeLangId constructs proper LANGIDs from a language and sublanguage`` () = 
-    Assert.AreEqual(0x0409us, LANGIDMappings.makeLangId(0x09us, 0x01us))
+    Assert.Equal(0x0409us, LANGIDMappings.makeLangId(0x09us, 0x01us))
 
-[<Test>]
+[<Fact>]
 let ``langIdPrimaryLanguage returns the correct primary language from a LANGID`` () = 
-    Assert.AreEqual(0x09us, LANGIDMappings.langidPrimaryLanguage(langidEnglishUs))
+    Assert.Equal(0x09us, LANGIDMappings.langidPrimaryLanguage(langidEnglishUs))
 
-[<Test>]
+[<Fact>]
 let ``langIdSubLanguage returns the correct sublanguage from a LANGID`` () = 
-    Assert.AreEqual(0x01us, LANGIDMappings.langidSubLanguage(langidEnglishUs))
+    Assert.Equal(0x01us, LANGIDMappings.langidSubLanguage(langidEnglishUs))
 
-[<Test>]
+[<Fact>]
 let ``converting a LANGID to ISO-639-1 without a mapping returns None`` () = 
-    Assert.AreEqual(None, LANGIDMappings.LANGIDToIso639Dash1(0xFFFFus))
+    Assert.Equal(None, LANGIDMappings.LANGIDToIso639Dash1(0xFFFFus))
 
-[<Test>]
+[<Fact>]
 let ``can convert a LANGID mapping to an ISO-639-1 code`` () =
-  let isoCodeOpt = LANGIDMappings.LANGIDToIso639Dash1(langidEnglishUs)
-  Assert.AreEqual(Some("en-US"), isoCodeOpt)
+    let isoCodeOpt = LANGIDMappings.LANGIDToIso639Dash1(langidEnglishUs)
+    Assert.Equal(Some("en-US"), isoCodeOpt)
 
-[<Test>]
+[<Fact>]
 let ``converting an ISO-639-1 code to a LANGID without a mapping returns None`` () = 
-    Assert.AreEqual(None, LANGIDMappings.Iso639Dash1ToLANGID("zz-ZZ"))
+    Assert.Equal(None, LANGIDMappings.Iso639Dash1ToLANGID("zz-ZZ"))
 
-[<Test>]
+[<Fact>]
 let ``can convert an ISO-639-1 code to a LANGID mapping`` () = 
    let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en-US")
-   Assert.AreEqual(Some(langidEnglishUs), langIdOpt)
+   Assert.Equal(Some(langidEnglishUs), langIdOpt)
 
-[<Test>]
+[<Fact>]
 let ``converting an ISO-639-1 code to a LANGID is case insensitive for the country`` () = 
     let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en-us")
-    Assert.AreEqual(Some(langidEnglishUs), langIdOpt)
+    Assert.Equal(Some(langidEnglishUs), langIdOpt)
 
-[<Test>]
+[<Fact>]
 let ``converting an ISO-639-1 code to a LANGID is case insensitive for the language`` () = 
     let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("EN-us")
-    Assert.AreEqual(Some(langidEnglishUs), langIdOpt)
+    Assert.Equal(Some(langidEnglishUs), langIdOpt)
 
-[<Test>]
+[<Fact>]
 let ``can convert an ISO-639-1 code that only contains a language`` () = 
     let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en")
-    Assert.AreEqual(Some(LANGIDMappings.makeLangId(0x09us, 0x00us)), langIdOpt)
+    Assert.Equal(Some(LANGIDMappings.makeLangId(0x09us, 0x00us)), langIdOpt)
