@@ -2,7 +2,7 @@
 namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("LANGIDMappings")>]
+[<assembly: AssemblyTitleAttribute("LANGIDMappingsConsole")>]
 [<assembly: AssemblyProductAttribute("LANGIDMappings")>]
 [<assembly: AssemblyDescriptionAttribute("Mappings between Windows LANGIDs and other standards")>]
 [<assembly: AssemblyVersionAttribute("0.2.0")>]
@@ -11,7 +11,7 @@ open System.Reflection
 do ()
 
 module internal AssemblyVersionInformation =
-    let [<Literal>] AssemblyTitle = "LANGIDMappings"
+    let [<Literal>] AssemblyTitle = "LANGIDMappingsConsole"
     let [<Literal>] AssemblyProduct = "LANGIDMappings"
     let [<Literal>] AssemblyDescription = "Mappings between Windows LANGIDs and other standards"
     let [<Literal>] AssemblyVersion = "0.2.0"

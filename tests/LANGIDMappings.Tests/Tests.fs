@@ -1,51 +1,42 @@
 module LANGIDMappings.Tests
 
-open LANGIDMappings
-open Xunit
+open Expecto
 
 let private langidEnglishUs = 0x0409us
 
-[<Fact>]
-let ``makeLangId constructs proper LANGIDs from a language and sublanguage`` () = 
-    Assert.Equal(0x0409us, LANGIDMappings.makeLangId(0x09us, 0x01us))
+[<Tests>]
+let tests = 
+  testList "LANGIDMappings" [
+    testCase "makeLangId constructs proper LANGIDs from a language and sublanguage" <| 
+      fun () -> Expect.equal 0x0409us (LANGIDMappings.makeLangId(0x09us, 0x01us)) "makeLangId should return 0x0409us"
 
-[<Fact>]
-let ``langIdPrimaryLanguage returns the correct primary language from a LANGID`` () = 
-    Assert.Equal(0x09us, LANGIDMappings.langidPrimaryLanguage(langidEnglishUs))
+    testCase "langIdPrimaryLanguage returns the correct primary language from a LANGID" <|
+      fun () -> Expect.equal 0x09us (LANGIDMappings.langidPrimaryLanguage langidEnglishUs) "langidPrimaryLanguage should return 0x09us"
 
-[<Fact>]
-let ``langIdSubLanguage returns the correct sublanguage from a LANGID`` () = 
-    Assert.Equal(0x01us, LANGIDMappings.langidSubLanguage(langidEnglishUs))
+    testCase "langIdSubLanguage returns the correct sublanguage from a LANGID" <|
+      fun () -> Expect.equal 0x01us (LANGIDMappings.langidSubLanguage langidEnglishUs) "langidSubLanguage should return 0x01us"
 
-[<Fact>]
-let ``converting a LANGID to ISO-639-1 without a mapping returns None`` () = 
-    Assert.Equal(None, LANGIDMappings.LANGIDToIso639Dash1(0xFFFFus))
+    testCase "converting a LANGID to ISO-639-1 without a mapping returns None" <|
+      fun () -> Expect.equal None (LANGIDMappings.LANGIDToIso639Dash1 0xFFFFus) "LANGIDToIso639Dash1 should return None"
 
-[<Fact>]
-let ``can convert a LANGID mapping to an ISO-639-1 code`` () =
-    let isoCodeOpt = LANGIDMappings.LANGIDToIso639Dash1(langidEnglishUs)
-    Assert.Equal(Some("en-US"), isoCodeOpt)
+    testCase "can convert a LANGID mapping to an ISO-639-1 code" <|
+      fun () ->
+        Expect.equal (Some "en-US") (LANGIDMappings.LANGIDToIso639Dash1 langidEnglishUs) "LANGIDToIso639Dash1 should return the LANGID for US English"
 
-[<Fact>]
-let ``converting an ISO-639-1 code to a LANGID without a mapping returns None`` () = 
-    Assert.Equal(None, LANGIDMappings.Iso639Dash1ToLANGID("zz-ZZ"))
+    testCase "converting an ISO-639-1 code to a LANGID without a mapping returns None" <|
+      fun () -> 
+        Expect.equal None (LANGIDMappings.Iso639Dash1ToLANGID "zz-ZZ") "Iso639Dash1ToLANGID should return None for unknown languages"
 
-[<Fact>]
-let ``can convert an ISO-639-1 code to a LANGID mapping`` () = 
-   let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en-US")
-   Assert.Equal(Some(langidEnglishUs), langIdOpt)
+    testCase "can convert an ISO-639-1 code to a LANGID mapping" <|
+      fun () -> Expect.equal (Some langidEnglishUs) (LANGIDMappings.Iso639Dash1ToLANGID "en-US") "Iso639Dash1ToLANGID should return the LANGID for en-US"
 
-[<Fact>]
-let ``converting an ISO-639-1 code to a LANGID is case insensitive for the country`` () = 
-    let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en-us")
-    Assert.Equal(Some(langidEnglishUs), langIdOpt)
+    testCase "converting an ISO-639-1 code to a LANGID is case insensitive for the country" <|
+      fun () -> Expect.equal (Some langidEnglishUs) (LANGIDMappings.Iso639Dash1ToLANGID "en-us") "Iso639Dash1ToLANGID should return the LANGID for en-US"
 
-[<Fact>]
-let ``converting an ISO-639-1 code to a LANGID is case insensitive for the language`` () = 
-    let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("EN-us")
-    Assert.Equal(Some(langidEnglishUs), langIdOpt)
+    testCase "converting an ISO-639-1 code to a LANGID is case insensitive for the language" <|
+      fun () -> Expect.equal (Some langidEnglishUs) (LANGIDMappings.Iso639Dash1ToLANGID "EN-us") "Iso639Dash1ToLANGID should return the LANGID for en-US"
 
-[<Fact>]
-let ``can convert an ISO-639-1 code that only contains a language`` () = 
-    let langIdOpt = LANGIDMappings.Iso639Dash1ToLANGID("en")
-    Assert.Equal(Some(LANGIDMappings.makeLangId(0x09us, 0x00us)), langIdOpt)
+    testCase "can convert an ISO-639-1 code that only contains a language" <|
+        fun () -> Expect.equal (Some (LANGIDMappings.makeLangId(0x09us, 0x00us))) (LANGIDMappings.Iso639Dash1ToLANGID "en") "Iso639Dash1ToLANGID should return English without a region"
+  ]
+
