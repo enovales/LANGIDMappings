@@ -1,4 +1,5 @@
-type project
+type file
+id LANGIDMappings
 title
     LANGIDMappings
 owners
@@ -6,15 +7,17 @@ owners
 authors 
     Erik Novales
 projectUrl
-    https://github.com/enovales/LANGIDMappings/enovales/LANGIDMappings
+    https://github.com/enovales/LANGIDMappings
 iconUrl
     https://raw.githubusercontent.com/enovales/LANGIDMappings/master/docs/files/img/logo.png
 licenseUrl
-    https://github.com/enovales/LANGIDMappings/enovales/LANGIDMappings/blob/master/LICENSE.txt
+    https://github.com/enovales/LANGIDMappings/blob/master/LICENSE.txt
 requireLicenseAcceptance
     false
+language
+    F#
 copyright
-    Copyright 2015
+    Copyright 2017
 tags
     LANGID
 summary
@@ -22,4 +25,5 @@ summary
 description
     Mappings between Windows LANGIDs and other standards
 
-
+files
+	../../bin/LANGIDMappings ==> lib

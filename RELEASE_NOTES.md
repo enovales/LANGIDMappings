@@ -1,3 +1,7 @@
+### 0.2.0 - May 22 2018
+* Update to .NET Core
+* Update tests to use Expecto
+
 ### 0.1.2 - October 28 2016
 * Updated framework version
 * Minor test updates
