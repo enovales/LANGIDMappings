@@ -1,7 +1,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/vydsbke0rry40wx4?svg=true)](https://ci.appveyor.com/project/ErikNovales/langidmappings)
+[![Build history](https://buildstats.info/appveyor/chart/ErikNovales/langidmappings)](https://ci.appveyor.com/project/ErikNovales/langidmappings/history)
 
-[![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/issue)](http://issuestats.com/github/fsprojects/ProjectScaffold)
-[![Issue Stats](http://issuestats.com/github/fsprojects/ProjectScaffold/badge/pr)](http://issuestats.com/github/fsprojects/ProjectScaffold)
+[![Issue Stats](http://issuestats.com/github/enovales/LANGIDMappings/badge/issue)](http://issuestats.com/github/enovales/LANGIDMappings)
+[![Issue Stats](http://issuestats.com/github/enovales/LANGIDMappings/badge/pr)](http://issuestats.com/github/enovales/LANGIDMappings)
 
 # LANGIDMappings
 
