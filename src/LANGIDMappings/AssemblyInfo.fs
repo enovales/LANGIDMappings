@@ -4,16 +4,20 @@ open System.Reflection
 
 [<assembly: AssemblyTitleAttribute("LANGIDMappings")>]
 [<assembly: AssemblyProductAttribute("LANGIDMappings")>]
-[<assembly: AssemblyDescriptionAttribute("Mappings between Windows LANGIDs and other standards")>]
-[<assembly: AssemblyVersionAttribute("0.2.0")>]
-[<assembly: AssemblyFileVersionAttribute("0.2.0")>]
-[<assembly: AssemblyConfigurationAttribute("Release")>]
+[<assembly: AssemblyVersionAttribute("0.3.0")>]
+[<assembly: AssemblyMetadataAttribute("ReleaseDate","2019-10-03T00:00:00.0000000")>]
+[<assembly: AssemblyFileVersionAttribute("0.3.0")>]
+[<assembly: AssemblyInformationalVersionAttribute("0.3.0")>]
+[<assembly: AssemblyMetadataAttribute("ReleaseChannel","release")>]
+[<assembly: AssemblyMetadataAttribute("GitHash","55d310c28195f2d473390f45e18a50816d92837b")>]
 do ()
 
 module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyTitle = "LANGIDMappings"
     let [<Literal>] AssemblyProduct = "LANGIDMappings"
-    let [<Literal>] AssemblyDescription = "Mappings between Windows LANGIDs and other standards"
-    let [<Literal>] AssemblyVersion = "0.2.0"
-    let [<Literal>] AssemblyFileVersion = "0.2.0"
-    let [<Literal>] AssemblyConfiguration = "Release"
+    let [<Literal>] AssemblyVersion = "0.3.0"
+    let [<Literal>] AssemblyMetadata_ReleaseDate = "2019-10-03T00:00:00.0000000"
+    let [<Literal>] AssemblyFileVersion = "0.3.0"
+    let [<Literal>] AssemblyInformationalVersion = "0.3.0"
+    let [<Literal>] AssemblyMetadata_ReleaseChannel = "release"
+    let [<Literal>] AssemblyMetadata_GitHash = "55d310c28195f2d473390f45e18a50816d92837b"
