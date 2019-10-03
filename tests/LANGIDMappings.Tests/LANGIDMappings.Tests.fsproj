@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net47</TargetFramework>
-    <RootNamespace>LANGIDMappings.Tests</RootNamespace>
-    <AssemblyName>LANGIDMappings.Tests</AssemblyName>
-    <Name>LANGIDMappings.Tests</Name>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Tests.fs" />
     <Compile Include="RunTests.fs" />
     <None Include="paket.references" />
@@ -18,5 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\LANGIDMappings\LANGIDMappings.fsproj"></ProjectReference>
   </ItemGroup>
+  <Import Project="..\..\netfx.props" />
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
