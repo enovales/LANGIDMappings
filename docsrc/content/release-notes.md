@@ -1,16 +1,13 @@
-### 0.3.0 - 2019-10-03
-* Update to .NET Core 3
-
-### 0.2.0 - 2018-05-22
+### 0.2.0 - May 22 2018
 * Update to .NET Core
 * Update tests to use Expecto
 
-### 0.1.2 - 2016-10-28
+### 0.1.2 - October 28 2016
 * Updated framework version
 * Minor test updates
 * Documentation updates
 * Added fsi signature
 
-### 0.1.1 - 2016-10-24
+### 0.1.1 - October 24 2016
 * Supports LANGID and ISO-639-1 mappings
 

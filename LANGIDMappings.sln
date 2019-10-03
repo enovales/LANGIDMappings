@@ -50,8 +50,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{7C6D08
 		build.sh = build.sh
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LANGIDMappingsConsole", "src\LANGIDMappingsConsole\LANGIDMappingsConsole.fsproj", "{B7339FEC-0891-4DF8-8BB5-0B806A64F32F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,10 +64,6 @@ Global
 		{64B28ED3-F086-4920-85DC-6CD0FA4F7882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64B28ED3-F086-4920-85DC-6CD0FA4F7882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64B28ED3-F086-4920-85DC-6CD0FA4F7882}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7339FEC-0891-4DF8-8BB5-0B806A64F32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7339FEC-0891-4DF8-8BB5-0B806A64F32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7339FEC-0891-4DF8-8BB5-0B806A64F32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7339FEC-0891-4DF8-8BB5-0B806A64F32F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
