@@ -15,9 +15,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="AssemblyInfoStatic.fs" />
     <Compile Include="LangIDMappings.fsi" />
     <Compile Include="LangIDMappings.fs" />
-    <None Include="paket.references" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
