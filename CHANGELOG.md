@@ -6,10 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2017-03-17
-First release
+### Changed
 
-### Added
-- This release already has lots of features
+Switched to use MiniScaffold. Built against .NET 5.0.
 
-[0.1.0]: https://github.com/user/MyCoolNewLib.git/releases/tag/v0.1.0
+## [0.3.0] - 2019-10-03
+* Update to .NET Core 3
+
+## [0.2.0] - 2018-05-22
+* Update to .NET Core
+* Update tests to use Expecto
+
+## [0.1.2] - 2016-10-28
+* Updated framework version
+* Minor test updates
+* Documentation updates
+* Added fsi signature
+
+## [0.1.1] - 2016-10-24
+* Supports LANGID and ISO-639-1 mappings
+
