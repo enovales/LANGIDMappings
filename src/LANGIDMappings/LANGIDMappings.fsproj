@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1</TargetFrameworks>
-    <RootNamespace>LANGIDMappings</RootNamespace>
-    <AssemblyName>LANGIDMappings</AssemblyName>
-    <Name>LANGIDMappings</Name>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworks>net5.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <Title>LANGIDMappings</Title>
     <Description>LANGIDMappings is a set of utilities for mapping Windows LANGID values to other formats.</Description>
+
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="AssemblyInfoStatic.fs" />
     <Compile Include="LangIDMappings.fsi" />
     <Compile Include="LangIDMappings.fs" />
-    <None Include="paket.references" />
-    <None Include="paket.template" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
+ 
