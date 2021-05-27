@@ -93,7 +93,8 @@ let publishUrl = "https://www.nuget.org"
 
 let docsSiteBaseUrl = sprintf "https://%s.github.io/%s" gitOwner gitRepoName
 
-let disableCodeCoverage = environVarAsBoolOrDefault "DISABLE_COVERAGE" false
+// Coverage is very skewed for this library, so ignore it.
+let disableCodeCoverage = environVarAsBoolOrDefault "DISABLE_COVERAGE" true
 
 let githubToken = Environment.environVarOrNone "GITHUB_TOKEN"
 Option.iter(TraceSecrets.register "<GITHUB_TOKEN>" )
@@ -419,6 +420,7 @@ let fsharpAnalyzers _ =
                     "BDH0002"
                 ]
                 FSharpAnalyzers.Verbose
+                FSharpAnalyzers.Ignore_Files [ "*.fsi" ]
             ]
             |> argParser.PrintCommandLineArgumentsFlat
         dotnet.fsharpAnalyzer id args
