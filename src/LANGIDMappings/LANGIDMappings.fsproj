@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup>
     <Title>LANGIDMappings</Title>
     <Description>LANGIDMappings is a set of utilities for mapping Windows LANGID values to other formats.</Description>
-
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
@@ -19,6 +19,4 @@
     <Compile Include="LangIDMappings.fsi" />
     <Compile Include="LangIDMappings.fs" />
   </ItemGroup>
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
- 
