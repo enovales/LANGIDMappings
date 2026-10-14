@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFrameworks>net5.0</TargetFrameworks>
-        <GenerateProgramFile>false</GenerateProgramFile>
-    </PropertyGroup>
-    <ItemGroup>
-        <ProjectReference Include="../../src/LANGIDMappings/LANGIDMappings.fsproj" />
-    </ItemGroup>
-        <ItemGroup>
-        <Compile Include="AssemblyInfo.fs" />
-        <Compile Include="Tests.fs" />
-        <Compile Include="Main.fs" />
-    </ItemGroup>
-    <Import Project="..\..\.paket\Paket.Restore.targets" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateProgramFile>false</GenerateProgramFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/LANGIDMappings/LANGIDMappings.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Tests.fs" />
+    <Compile Include="Main.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Expecto" Version="9.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
+    <PackageReference Include="YoloDev.Expecto.TestSdk" Version="0.11.1" />
+  </ItemGroup>
 </Project>
-
